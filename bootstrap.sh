@@ -2,7 +2,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".zshrc .vimrc .vim_runtime .tmux.conf .tmuxline.conf .gitconfig"        # list of files/folders to symlink in homedir
+files=".zshrc .vimrc .tmux.conf .tmuxline.conf .gitconfig"        # list of files/folders to symlink in homedir
 
 ##########
 
@@ -23,6 +23,12 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
+
+# Install AMIX VIM
+git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+ln -s $dir/my_configs.vim ~/.vim_runtime
 
 source ~/.bashrc
 source ~/.zshrc
