@@ -30,5 +30,8 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 ln -s $dir/my_configs.vim ~/.vim_runtime
 
+cd ~/.vim_runtime
+git clone https://github.com/edkolev/tmuxline.vim.git sources_non_forked/tmuxline
+
 source ~/.bashrc
 source ~/.zshrc
